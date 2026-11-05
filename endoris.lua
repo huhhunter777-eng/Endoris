@@ -55,10 +55,10 @@ for _, name in ipairs(targetNames123321) do
         LocalPlayer:Kick("in SEB only pidors ; you blocked in script")
     end
 end
-if UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled then
-    LocalPlayer:Kick("Script not for phone")
-    return
+if not UserInputService.KeyboardEnabled then
+    UserInputService.TouchEnabled = false
 end
+
 local libSource
 if readfile and pcall(readfile, "menu_lib.lua") then
     local ok, res = pcall(readfile, "menu_lib.lua")
